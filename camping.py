@@ -1,4 +1,5 @@
 import datetime
+import sys
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
@@ -15,14 +16,14 @@ length = driver.find_element_by_id("lengthOfStay")
 
 while True:
   now = datetime.datetime.now()
-  if now.minute == 16 :
+  if now.minute == 53 :
     break
 
 length.submit()
 
 emailTextBox = driver.find_element_by_id("AemailGroup_1733152645")
-emailTextBox.send_keys("sywe.abby@gmail.com")
+emailTextBox.send_keys(sys.argv[1])
 pwtb = driver.find_element_by_id("ApasswrdGroup_704558654")
-pwtb.send_keys("google")
+pwtb.send_keys(sys.argv[2])
 submitButton = driver.find_element_by_id("submitForm_submitForm")
 submitButton.click()
