@@ -1,3 +1,4 @@
+import datetime
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
@@ -11,6 +12,12 @@ length = driver.find_element_by_id("lengthOfStay")
 length.send_keys("2")
 length.submit()
 length = driver.find_element_by_id("lengthOfStay")
+
+while True:
+  now = datetime.datetime.now()
+  if now.minute == 16 :
+    break
+
 length.submit()
 
 emailTextBox = driver.find_element_by_id("AemailGroup_1733152645")
